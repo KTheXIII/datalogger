@@ -1,6 +1,7 @@
 package helloworld
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -15,8 +16,9 @@ type MessageReply struct {
 }
 
 func Register(router *gin.Engine) {
-	router.GET("/hello-world", HelloWorld)
-	router.POST("/hello-world", PostWorld)
+	router.GET("/hello", HelloWorld)
+	router.POST("/hello", PostWorld)
+	router.POST("/hello-text", PostTextWorld)
 }
 
 func HelloWorld(c *gin.Context) {
@@ -34,4 +36,14 @@ func PostWorld(c *gin.Context) {
 	}
 	reply := MessageReply{Reply: messageJSON.Message}
 	c.IndentedJSON(http.StatusOK, reply)
+}
+
+func PostTextWorld(c *gin.Context) {
+	buf := make([]byte, 1024)
+	num, _ := c.Request.Body.Read(buf)
+	reqBody := string(buf[0:num])
+
+	fmt.Println(reqBody)
+
+	c.String(http.StatusOK, "Hello, World")
 }

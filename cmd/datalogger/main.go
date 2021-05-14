@@ -2,14 +2,11 @@ package main
 
 import (
 	"datalogger/package/routes/helloworld"
-	"fmt"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	fmt.Println("Starting server...")
-
 	// Create gin engine
 	router := gin.Default()
 
@@ -17,5 +14,5 @@ func main() {
 	helloworld.Register(router)
 
 	// Start listening with default port 8080
-	router.Run()
+	router.Run("127.0.0.1:8080")
 }

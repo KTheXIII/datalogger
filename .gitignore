@@ -1,2 +1,38 @@
+# ┃ Outputs
+# ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫ #
+
+## Package files
+*.zip
+*.rar
+*.tar.gz
+
+## Generated data
+**/data
+
+# ┃ Environment Variables
+# ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫ #
+
+**/.env*
+
+# ┃ Generated Workspaces
+# ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫ #
+
+## Visual Studio Code
 .vscode
-bin
+
+## IntelliJ
+.idea
+*.iml
+
+# ┃ System Files
+# ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫ #
+
+## macOS
+.DS_Store
+*.icloud
+.AppleDouble
+.LSOverride
+
+## Windows
+$RECYCLE.BIN/
+*.lnk
